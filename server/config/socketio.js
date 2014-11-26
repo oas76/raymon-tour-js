@@ -18,6 +18,7 @@ function onConnect(socket) {
   });
 
   // Insert sockets below
+  require('../api/golfclub/golfclub.socket').register(socket);
   require('../api/course/course.socket').register(socket);
   require('../api/thing/thing.socket').register(socket);
 }
