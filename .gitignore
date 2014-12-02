@@ -3,8 +3,8 @@ public
 .tmp
 .sass-cache
 .idea
-.old
 client/bower_components
 dist
 /server/config/local.env.js
 *~
+*.old

@@ -3,10 +3,14 @@
 var mongoose = require('mongoose'),
     Schema = mongoose.Schema;
 
-var GolfclubSchema = new Schema({
+var GolfClubSchema = new Schema({
   name: String,
   info: String,
-  active: Boolean
+  active: Boolean,
+  web: String,
+  gps: String
 });
 
-module.exports = mongoose.model('Golfclub', GolfclubSchema);
+module.exports = mongoose.model('Golfclub', GolfClubSchema);
+
+
