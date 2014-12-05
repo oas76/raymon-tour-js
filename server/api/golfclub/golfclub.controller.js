@@ -60,9 +60,6 @@ exports.showhole = function(req, res) {
   });
 };
 
-
-
-
 // Creates a new golfclub in the DB.
 exports.create = function(req, res) {
   Golfclub.create(req.body, function(err, golfclub) {

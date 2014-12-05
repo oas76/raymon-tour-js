@@ -4,9 +4,8 @@ var mongoose = require('mongoose'),
     Schema = mongoose.Schema;
 
 var GolfClubSchema = new Schema({
-  name: String,
+  name: { type: String, required: true },
   info: String,
-  active: Boolean,
   web: String,
   gps: String
 });
