@@ -58,8 +58,6 @@ describe('GET /api/golfclubs', function() {
 
 
   it('Add a course', function(done) {
-
-
     request(app)
       .post('/api/golfclubs/' + club_id + '/courses')
       .send(testinstance.getcourse())
@@ -85,6 +83,29 @@ describe('GET /api/golfclubs', function() {
       .end(function(err, res) {
         if (err) return done(err);
         should.exist(res.body);
+        done();
+      });
+  });
+
+
+  it('Try to add incomplete course', function(done) {
+    request(app)
+      .post('/api/golfclubs/' + club_id + '/courses')
+      .send(testinstance.getincompletecourse())
+      .expect(500)
+      .end(function (err, res) {
+        if (err) return done(err);
+        done();
+      });
+  });
+
+  it('Try to add invalid course', function(done) {
+    request(app)
+      .post('/api/golfclubs/' + club_id + '/courses')
+      .send(testinstance.getinvalidcourse())
+      .expect(500)
+      .end(function (err, res) {
+        if (err) return done(err);
         done();
       });
   });
@@ -117,7 +138,7 @@ describe('GET /api/golfclubs', function() {
   });
 
 
-  it('Try to add invalid hole data to a specific course', function(done) {
+  it('Try to add invalid hole data to a specific hole', function(done) {
     request(app)
       .post('/api/golfclubs/'+club_id+'/courses/'+course_id+'/holes')
       .send(testinstance.getinvalidhole())
@@ -131,10 +152,10 @@ describe('GET /api/golfclubs', function() {
   });
 
 
-  it('Try to add uncomplete hole data to a specific course', function(done) {
+  it('Try to add uncomplete hole data to a specific hoole', function(done) {
     request(app)
       .post('/api/golfclubs/'+club_id+'/courses/'+course_id+'/holes')
-      .send(testinstance.getuncompletehole())
+      .send(testinstance.getincompletehole())
       .expect(500)
       .expect('Content-Type', 'application/json')
       .end(function(err, res) {

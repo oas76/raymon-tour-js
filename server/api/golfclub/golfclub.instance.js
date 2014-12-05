@@ -37,7 +37,7 @@ exports.gethole = function(){
   });
 };
 
-exports.getuncompletehole = function(){
+exports.getincompletehole = function(){
   return new Golfhole({
     holenr: 1,
     length: 384,
@@ -47,7 +47,7 @@ exports.getuncompletehole = function(){
 };
 
 
-exports.getuncompletecourse = function(){
+exports.getincompletecourse = function(){
   return new Golfcourse({
     name: "Bogstad",
     tee: "63",
