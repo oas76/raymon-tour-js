@@ -2,6 +2,7 @@
 $fa-font-path: "/bower_components/font-awesome/fonts";
 
 @import 'font-awesome/scss/font-awesome';
+@import url(//fonts.googleapis.com/css?family=Source+Sans+Pro:300,400);
 
 /**
  * App-wide Styles
@@ -19,6 +20,14 @@ $fa-font-path: "/bower_components/font-awesome/fonts";
     .container {
         max-width: 730px;
     }
+}
+
+body {
+  font-family: 'Source Sans Pro', sans-serif;
+  background: url(/assets/images/golf.jpg);
+  background-repeat: no-repeat;
+  padding: 0;
+  margin: 0;
 }
 
 // Component styles are injected through grunt
