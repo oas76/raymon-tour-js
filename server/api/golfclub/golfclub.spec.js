@@ -146,7 +146,6 @@ describe('GET /api/golfclubs', function() {
       .expect('Content-Type', 'application/json')
       .end(function(err, res) {
         if (err) return done(err);
-        console.log(res);
         done();
       });
   });
